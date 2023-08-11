@@ -1,6 +1,3 @@
-// C Program to Insert an element
-// at a specific position in an Array
-
 #include <stdio.h>
 
 int main()
