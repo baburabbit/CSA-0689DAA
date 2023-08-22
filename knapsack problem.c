@@ -17,8 +17,8 @@ double fractionalKnapsack(int capacity, Item items[], int n) {
     qsort(items, n, sizeof(Item), compareItems);
 
     double totalValue = 0.0;
-
-    for (int i = 0; i < n; i++) {
+	int i;
+    for (i = 0; i < n; i++) {
         if (capacity >= items[i].weight) {
             totalValue += items[i].value;
             capacity -= items[i].weight;
@@ -32,7 +32,7 @@ double fractionalKnapsack(int capacity, Item items[], int n) {
 }
 
 int main() {
-    int n, capacity;
+    int n,i, capacity;
     printf("Enter the number of items: ");
     scanf("%d", &n);
 
@@ -41,7 +41,7 @@ int main() {
 
     Item items[n];
 
-    for (int i = 0; i < n; i++) {
+    for ( i = 0; i < n; i++) {
         printf("Enter weight and value for item %d: ", i + 1);
         scanf("%d %d", &items[i].weight, &items[i].value);
         items[i].ratio = (double)items[i].value / items[i].weight;
@@ -52,4 +52,3 @@ int main() {
 
     return 0;
 }
-
